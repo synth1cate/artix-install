@@ -39,3 +39,7 @@ echo -e "${userpass}\n${userpass}\n" | passwd ${username}
 
 # hostname configuration
 printf "\n127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\t${hostname}.localdomain\t${hostname}\n" >> /etc/hosts
+
+# installing GRUB
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Artix --recheck
+grub-mkconfig -o /boot/grub/grub.cfg

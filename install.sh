@@ -151,7 +151,7 @@ executeinstall()
     pacman -Sy --noconfirm wget refind gdisk
 
     # installing essential packages through basestrap
-    basestrap /mnt base base-devel ${ucode} elogind elogind-dinit opendoas booster refind gdisk \
+    basestrap /mnt base base-devel ${ucode} elogind elogind-dinit opendoas booster grub efibootmgr os-prober mtools dosfstools gdisk \
                    btrfs-progs linux-zen linux-zen-headers linux-firmware \
                    ntfs-3g dhcpcd dhcpcd-dinit networkmanager networkmanager-dinit cups cups-dinit hplip \
                    system-config-printer \
@@ -167,9 +167,6 @@ executeinstall()
 
     # generating fstab
     fstabgen -U /mnt >> /mnt/etc/fstab
-
-    # installing rEFInd (dirty method)
-    refind-install --root /mnt
 
     # chroot time
     cp chroot.sh /mnt/root
