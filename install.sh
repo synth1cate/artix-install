@@ -135,8 +135,7 @@ executeinstall()
 
     # exporting configuration
     tmpvardir="/mnt/tmpvars"
-    if [[ -d ${tmpvardir} ]]; then rm -r ${tmpvardir} && mkdir ${tmpvardir}; fi
-    mkdir ${tmpvardir}
+    if [[ -d $tmpvardir ]]; then rm -r $tmpvardir && mkdir $tmpvardir; fi
     touch ${tmpvardir}/{cpu,gpu,ram,boot,disk,diskdir,efipart,rootpart,username,userpass,rootpass,hostname,timezone}
     for file in ${tmpvardir}/*
     do
