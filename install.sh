@@ -155,7 +155,7 @@ executeinstall()
                    btrfs-progs linux-zen linux-zen-headers linux-firmware \
                    ntfs-3g dhcpcd dhcpcd-dinit networkmanager networkmanager-dinit cups cups-dinit hplip \
                    system-config-printer \
-                   pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber
+                   pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber --ignore mkinitcpio
 
 
     # tweaking Pacman for soon-to-be chrooted system
