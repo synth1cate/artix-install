@@ -9,7 +9,7 @@
 # STAGE 2: CHROOT
 
 # loading cpu,gpu,ram,boot,disk,diskdir,efipart,rootpart,username,userpass,rootpass
-tmpvardir="/mnt/tmpvars"
+tmpvardir="/tmpvars"
 cpu=$(cat ${tmpvardir}/cpu)
 gpu=$(cat ${tmpvardir}/gpu)
 ram=$(cat ${tmpvardir}/ram)
