@@ -168,6 +168,9 @@ executeinstall()
     # generating fstab
     fstabgen -U /mnt >> /mnt/etc/fstab
 
+    # installing rEFInd (dirty method)
+    refind-install --root /mnt
+
     # chroot time
     cp chroot.sh /mnt/root
     artix-chroot /mnt /bin/bash -c 'sh /root/chroot.sh; rm /root/chroot.sh; exit'

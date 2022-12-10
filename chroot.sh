@@ -34,8 +34,8 @@ hwclock --systohc --utc
 
 # user configuration
 useradd -mG wheel,video,audio,input -s /bin/bash ${username}
-printf "root:${rootpass}" | chpasswd
-printf "${username}:${userpass}" | chpasswd
+echo -e "${rootpass}\n${rootpass}\n" | passwd
+echo -e "${userpass}\n${userpass}\n" | passwd ${username}
 
-# installing rEFInd
-refind-install
+# hostname configuration
+printf "\n127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\t${hostname}.localdomain\t${hostname}\n" >> /etc/hosts
